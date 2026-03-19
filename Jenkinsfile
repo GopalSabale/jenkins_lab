@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven-3.9'
+        maven 'mvn_3.9.12'
     }
 
     environment {
@@ -11,7 +11,7 @@ pipeline {
 
     stages {
 
-        stage('Code Compilationss') {
+        stage('Code Compilations') {
             steps {
                 echo 'Running the compilation'
                 sh 'mvn clean compile'
