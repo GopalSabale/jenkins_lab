@@ -11,7 +11,7 @@ pipeline {
 
     stages {
 
-        stage('Code Compilation') {
+        stage('Code Compilations') {
             steps {
                 echo 'Running the compilation'
                 sh 'mvn clean compile'
