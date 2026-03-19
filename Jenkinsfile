@@ -37,5 +37,13 @@ pipeline {
                 sh 'mvn package'
             }
         }
+        stage('create docker container') {
+            steps {
+                echo 'taging the docker image'
+                sh 'docker container run -d --name c1 nginx'
+                echo 'container has been completed'
+            }
+        }
+
     }
 }
