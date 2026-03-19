@@ -39,13 +39,6 @@ pipeline {
         }
         stage('create docker container') {
             steps {
-                echo 'creating the docker container'
-                sh 'docker container run -d --name c1 nginx'
-                echo 'container has been completed'
-            }
-        }
-        stage('create a image from running container') {
-            steps {
                 echo 'image is creating'
                 sh '''
                 if [ "$(docker container ps -a -q -f name=c1)" ]; then
@@ -55,6 +48,8 @@ pipeline {
                 fi
                 '''
             }
+        }
+        stage('create a image from running container') {
         }
     }
 }
