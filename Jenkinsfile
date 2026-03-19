@@ -39,11 +39,19 @@ pipeline {
         }
         stage('create docker container') {
             steps {
-                echo 'taging the docker image'
+                echo 'creating the docker container'
                 sh 'docker container run -d --name c1 nginx'
                 echo 'container has been completed'
             }
         }
-
+        stage('create a image from running container') {
+            steps {
+                echo 'image is creating'
+                sh 'docker commit c1 test_c1_image:v1'
+                echo 'image has been created from running container'
+            }
+        }
     }
 }
+
+
