@@ -50,6 +50,11 @@ pipeline {
             }
         }
         stage('create a image from running container') {
+            steps {
+                echo 'creating the docker image from container'
+                sh 'docker commit c1 c1_image:v1'
+                echo 'image has been created'
+            }
         }
     }
 }
