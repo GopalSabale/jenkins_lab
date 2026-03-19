@@ -47,8 +47,13 @@ pipeline {
         stage('create a image from running container') {
             steps {
                 echo 'image is creating'
-                sh 'docker commit c1 test_c1_image:v1'
-                echo 'image has been created from running container'
+                sh '''
+                if [ "$(docker container ps -a -q -f name=c1)" ]; then
+                    echo 'docker container already exist....'
+                else
+                    docker container run -d --name c1 nginx
+                fi
+                '''
             }
         }
     }
