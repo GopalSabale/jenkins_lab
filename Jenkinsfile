@@ -14,10 +14,6 @@ pipeline {
         maven 'mvn_3.9.12'
     }
 
-    environment {
-        ENV = 'dev'
-    }
-
     stages {
 
         stage('Code Compilations') {
