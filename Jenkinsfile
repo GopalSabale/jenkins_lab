@@ -72,7 +72,7 @@ pipeline {
         stage ('tag & push image') {
             steps {
                 echo 'taging image'
-                sh 'docker tag c1_image:latest $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$REPO_NAME:$IMAGE_TAG'
+                sh 'docker tag c1_image:v1 $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$REPO_NAME:$IMAGE_TAG'
                 echo 'docker image has been tagged'
                 sh 'docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$REPO_NAME:$IMAGE_TAG'
             }
