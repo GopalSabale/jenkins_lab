@@ -3,7 +3,7 @@ pipeline {
     environment {
         AWS_REGION='us-east-1'
         ACCOUNT_ID='315354952103'
-        REPO_NAME='my-test_jenkins'
+        REPO_NAME='test_jenkins'
         IMAGE_TAG='latest'
     }
     options {
