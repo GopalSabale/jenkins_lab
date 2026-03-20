@@ -1,10 +1,10 @@
 pipeline {
     agent any
     environment {
-        AWS_REGION=us-east-1
-        ACCOUNT_ID=315354952103
-        REPO_NAME=my-test_jenkins
-        IMAGE_TAG=latest
+        AWS_REGION='us-east-1'
+        ACCOUNT_ID='315354952103'
+        REPO_NAME='my-test_jenkins'
+        IMAGE_TAG='latest'
     }
     options {
         buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
