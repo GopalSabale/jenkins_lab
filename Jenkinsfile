@@ -4,7 +4,7 @@ pipeline {
         AWS_REGION='us-east-1'
         ACCOUNT_ID='315354952103'
         REPO_NAME='test_jenkins'
-        IMAGE_TAG='latest'
+        IMAGE_TAG='V1'
     }
     options {
         buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
